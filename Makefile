@@ -8,15 +8,6 @@ NAME_BONUS	=	checker
 PATH_SRCS	=	srcs/
 
 SRCS	+=	lists.c
-SRCS	+=	sort.c
-SRCS	+=	rotate.c
-SRCS	+=	pushnswap.c
-SRCS	+=	rank.c
-SRCS	+=	easysort.c
-SRCS	+=	push_swap_utils.c
-SRCS	+=	moves.c
-SRCS	+=	print_rotate.c
-SRCS	+=	check.c
 
 vpath	%.c	$(PATH_SRCS)
 
