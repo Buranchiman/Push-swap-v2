@@ -8,6 +8,7 @@ NAME_BONUS	=	checker
 PATH_SRCS	=	srcs/
 
 SRCS	+=	lists.c
+SRCS	+=	check_input.c
 
 vpath	%.c	$(PATH_SRCS)
 

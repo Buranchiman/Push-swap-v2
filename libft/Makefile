@@ -78,7 +78,7 @@ $(OBJS) : $(PATH_OBJS)/%.o:%.c
 		$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDE)
 
 clean:
-	rm -r $(PATH_OBJS)
+	rm -rf $(PATH_OBJS)
 
 fclean: clean
 	rm -rf $(NAME)

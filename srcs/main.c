@@ -1,16 +1,5 @@
 #include "push_swap.h"
 
-int	check_params(char **arv)
-{
-	int	i;
-
-	i = 1;
-	while (arv[i])
-	{
-		
-	}
-}
-
 void	print_list(t_stack *stack)
 {
 	t_stack	*tmp;
@@ -33,7 +22,10 @@ int	main(int arc, char **arv)
 	i = 1;
 	a = NULL;
 	if (!check_params(arv))
-		rerutnr(1);
+	{
+		ft_printf(2, "Error\n");
+		return (1);
+	}
 	while (arv[i])
 	{
 		ft_stackadd_back(&a, ft_new_stack(ft_atoi(arv[i])));
