@@ -14,13 +14,14 @@ void	print_list(t_stack *stack)
 
 int	main(int arc, char **arv)
 {
-	t_stack	*a;
-	int		i;
+	t_holder	holder;
+	int			i;
 
 	if (arc == 1)
 		return (1);
 	i = 1;
-	a = NULL;
+	holder.a = NULL;
+	holder.b = NULL;
 	if (!check_params(arv))
 	{
 		ft_printf(2, "Error\n");
@@ -28,9 +29,13 @@ int	main(int arc, char **arv)
 	}
 	while (arv[i])
 	{
-		ft_stackadd_back(&a, ft_new_stack(ft_atoi(arv[i])));
+		ft_stackadd_back(&(holder).a, ft_new_stack(ft_atoi(arv[i])));
 		i++;
 	}
-	print_list(a);
+	print_list(holder.a);
+	push(&(holder).a, &(holder).b, &holder);
+	print_list(holder.a);
+	ft_printf(1, "content of b is :\n");
+	print_list(holder.b);
 	return (0);
 }

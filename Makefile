@@ -9,6 +9,7 @@ PATH_SRCS	=	srcs/
 
 SRCS	+=	lists.c
 SRCS	+=	check_input.c
+SRCS	+=	push.c
 
 vpath	%.c	$(PATH_SRCS)
 
