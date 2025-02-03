@@ -10,6 +10,7 @@ PATH_SRCS	=	srcs/
 SRCS	+=	lists.c
 SRCS	+=	check_input.c
 SRCS	+=	push.c
+SRCS	+=	rank.c
 
 vpath	%.c	$(PATH_SRCS)
 

@@ -7,7 +7,7 @@ void	print_list(t_stack *stack)
 	tmp = stack;
 	while (tmp)
 	{
-		ft_printf(1, "content of stack is %d\n", tmp->content);
+		ft_printf(1, "content of stack is %d and rank is %d\n", tmp->content, tmp->rank);
 		tmp = tmp->next;
 	}
 }
@@ -32,10 +32,13 @@ int	main(int arc, char **arv)
 		ft_stackadd_back(&(holder).a, ft_new_stack(ft_atoi(arv[i])));
 		i++;
 	}
+	rank_list(&(holder).a);
 	print_list(holder.a);
-	push(&(holder).a, &(holder).b, &holder);
+	push(&(holder).a, &(holder).b, "pb\n");
 	print_list(holder.a);
 	ft_printf(1, "content of b is :\n");
 	print_list(holder.b);
+	rotate(&(holder).a, "ra\n");
+	print_list(holder.a);
 	return (0);
 }

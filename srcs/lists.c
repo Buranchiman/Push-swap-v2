@@ -8,6 +8,7 @@ t_stack	*ft_new_stack(int content)
 	if (stack == NULL)
 		return (NULL);
 	stack->content = content;
+	stack->rank = 0;
 	stack->next = NULL;
 	return (stack);
 }
@@ -49,4 +50,19 @@ void	ft_stackclear(t_stack **stack)
 			*stack = point;
 		}
 	}
+}
+
+int	ft_stacksize(t_stack *stack)
+{
+	int		i;
+	t_stack	*point;
+
+	i = 0;
+	point = stack;
+	while (point != NULL)
+	{
+		point = point->next;
+		i++;
+	}
+	return (i);
 }
