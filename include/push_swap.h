@@ -34,5 +34,6 @@ void		reverse_rotate(t_stack	**stack, char	*msg);
 void		swap(t_stack	**stack, char	*msg);
 
 void		rank_list(t_stack	**stack);
+void		sortstack(t_holder *holder);
 
 #endif
