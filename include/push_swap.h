@@ -15,6 +15,7 @@ typedef struct s_holder
 {
 	t_stack	*a;
 	t_stack	*b;
+	int		window_max;
 }				t_holder;
 
 t_stack		*ft_new_stack(int content);
@@ -28,12 +29,14 @@ int			check_only_digits(char *str);
 int			check_dups(char **arv, int index);
 int			check_params(char **arv);
 
-void		push(t_stack **from, t_stack **to, char	*msg);
-void		rotate(t_stack	**stack, char	*msg);
-void		reverse_rotate(t_stack	**stack, char	*msg);
-void		swap(t_stack	**stack, char	*msg);
+void		push(t_stack **from, t_stack **to, t_holder *holder);
+void		rotate(t_stack	**stack, t_holder *holder, int option);
+void		reverse_rotate(t_stack	**stack, t_holder *holder, int option);
+void		swap(t_stack	**stack, t_holder *holder, int option);
 
 void		rank_list(t_stack	**stack);
 void		sortstack(t_holder *holder);
+
+void		fastest_path(t_stack **stack, int f(int elem, int cmp), t_holder *holder);
 
 #endif

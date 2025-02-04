@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	push(t_stack **from, t_stack **to, char *msg)
+void	push(t_stack **from, t_stack **to, t_holder *holder)
 {
 	t_stack	*tmp;
 
@@ -8,11 +8,13 @@ void	push(t_stack **from, t_stack **to, char *msg)
 	*from = (*from)->next;
 	tmp->next = NULL;
 	ft_stackadd_front(to, tmp);
-	if (msg)
-		ft_printf(1, "%s", msg);
+	if (to == &(holder)->a)
+		ft_printf(1, "%s", "pa\n");
+	else
+		ft_printf(1, "%s", "pb\n");
 }
 
-void	rotate(t_stack	**stack, char	*msg)
+void	rotate(t_stack	**stack, t_holder *holder, int option)
 {
 	t_stack	*tmp;
 
@@ -20,11 +22,20 @@ void	rotate(t_stack	**stack, char	*msg)
 	*stack = (*stack)->next;
 	tmp->next = NULL;
 	ft_stackadd_back(stack, tmp);
-	if (msg)
-		ft_printf(1, "%s", msg);
+	if (option == 0)
+	{
+		if (*stack == holder->a)
+			ft_printf(1, "ra\n");
+		else
+			ft_printf(1, "rb\n");
+	}
+	if (option == 1)
+		return ;
+	if (option == 2)
+		ft_printf(1, "rr\n");
 }
 
-void	reverse_rotate(t_stack	**stack, char *msg)
+void	reverse_rotate(t_stack	**stack, t_holder *holder, int option)
 {
 	t_stack	*tmp;
 	t_stack	*moved;
@@ -35,11 +46,20 @@ void	reverse_rotate(t_stack	**stack, char *msg)
 	moved = tmp->next;
 	tmp->next = NULL;
 	ft_stackadd_front(stack, moved);
-	if (msg)
-		ft_printf(1, "%s", msg);
+	if (option == 0)
+	{
+		if (*stack == holder->a)
+			ft_printf(1, "rra\n");
+		else
+			ft_printf(1, "rrb\n");
+	}
+	if (option == 1)
+		return ;
+	if (option == 2)
+		ft_printf(1, "rrr\n");
 }
 
-void	swap(t_stack	**stack, char *msg)
+void	swap(t_stack	**stack, t_holder *holder, int option)
 {
 	t_stack	*tmp1;
 	t_stack	*tmp2;
@@ -49,6 +69,15 @@ void	swap(t_stack	**stack, char *msg)
 	(*stack)->next = tmp2;
 	tmp1->next = *stack;
 	*stack = tmp1;
-	if (msg)
-		ft_printf(1, "%s", msg);
+	if (option == 0)
+	{
+		if (*stack == holder->a)
+			ft_printf(1, "sa\n");
+		else
+			ft_printf(1, "sb\n");
+	}
+	if (option == 1)
+		return ;
+	if (option == 2)
+		ft_printf(1, "ss\n");
 }

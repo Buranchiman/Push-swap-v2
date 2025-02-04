@@ -12,6 +12,7 @@ SRCS	+=	check_input.c
 SRCS	+=	push.c
 SRCS	+=	rank.c
 SRCS	+=	sort.c
+SRCS	+=	pathfinder.c
 
 vpath	%.c	$(PATH_SRCS)
 

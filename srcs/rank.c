@@ -9,7 +9,7 @@ void	rank_list(t_stack	**stack)
 	t_stack	*change;
 
 	size = ft_stacksize(*stack);
-	ft_printf(1, "size of stack is %d\n", size);
+	//ft_printf(1, "size of stack is %d\n", size);
 	rank = 1;
 	while (rank <= size)
 	{

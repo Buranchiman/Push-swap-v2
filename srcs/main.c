@@ -41,8 +41,8 @@ int	main(int arc, char **arv)
 	// rotate(&(holder).a, "ra\n");
 	// print_list(holder.a);
 	sortstack(&holder);
-	print_list(holder.b);
-	ft_printf(1, "stack a is :\n");
-	print_list(holder.a);
+	//print_list(holder.b);
+	// ft_printf(1, "stack a is :\n");
+	// print_list(holder.a);
 	return (0);
 }
