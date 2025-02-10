@@ -1,5 +1,11 @@
 #include "push_swap.h"
 
+void	sort_three(t_holder **holder)
+{
+	if (((*holder)->a->rank == 1 && (*holder)->a->next->rank == 3) || ((*stack)->rank == 2 && (*stack)->next->rank == 1) || ((*stack)->rank == 3 && (*stack)->next->rank == 2))
+		swap
+}
+
 int	ft_smaller(int i, int max)
 {
 	if (i < max)
