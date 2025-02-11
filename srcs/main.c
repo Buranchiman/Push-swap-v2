@@ -42,7 +42,9 @@ int	main(int arc, char **arv)
 	// print_list(holder.a);
 	sortstack(&holder);
 	//print_list(holder.b);
-	ft_printf(1, "stack a is :\n");
-	print_list(holder.a);
+	three_ordered(&holder);
+	refill_a(&holder);
+	// ft_printf(1, "stack a is :\n");
+	// print_list(holder.a);
 	return (0);
 }

@@ -12,6 +12,8 @@ int	search_top(t_stack *stack, int f(int elem, int cmp), int cmp)
 		tmp = tmp->next;
 		count ++;
 	}
+	if (!tmp)
+		return (-1);
 	return (count);
 }
 
@@ -39,17 +41,19 @@ int	search_bottom(t_stack *stack, int f(int elem, int cmp), int cmp)
 		tmp = set_previous(stack, tmp);
 		count ++;
 	}
+	if (tmp == stack)
+		return (-1);
 	return (count);
 }
 
-void	fastest_path(t_stack **stack, int f(int elem, int cmp), t_holder *holder)
+int	fastest_path(t_stack **stack, int f(int elem, int cmp), t_holder *holder, int cmp)
 {
 	int	rotate_count;
 	int	reverse_rotate_count;
 	int	count;
 
-	rotate_count = search_top(*stack, f, holder->window_max);
-	reverse_rotate_count = search_bottom(*stack, f, holder->window_max);
+	rotate_count = search_top(*stack, f, cmp);
+	reverse_rotate_count = search_bottom(*stack, f, cmp);
 	count = 0;
 	if (rotate_count <= reverse_rotate_count)
 	{
@@ -67,4 +71,5 @@ void	fastest_path(t_stack **stack, int f(int elem, int cmp), t_holder *holder)
 			count ++;
 		}
 	}
+	return (count);
 }

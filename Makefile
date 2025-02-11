@@ -13,6 +13,7 @@ SRCS	+=	push.c
 SRCS	+=	rank.c
 SRCS	+=	sort.c
 SRCS	+=	pathfinder.c
+SRCS	+=	order.c
 
 vpath	%.c	$(PATH_SRCS)
 

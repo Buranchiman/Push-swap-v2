@@ -1,18 +1,50 @@
 #include "push_swap.h"
 
-int	three_ordered(t_stack *first)
+int	smallest_elem(t_stack *stack)
+{
+	t_stack	*tmp;
+	int		smallest;
+
+	tmp = stack;
+	smallest = tmp->rank;
+	while (tmp)
+	{
+		if (tmp->rank < smallest)
+			smallest = tmp->rank;
+		tmp = tmp->next;
+	}
+	return (smallest);
+}
+
+int	biggest_elem(t_stack	*stack)
+{
+	t_stack	*tmp;
+	int		biggest;
+
+	tmp = stack;
+	biggest = tmp->rank;
+	while (tmp)
+	{
+		if (tmp->rank > biggest)
+			biggest = tmp->rank;
+		tmp = tmp->next;
+	}
+	return (biggest);
+}
+void	three_ordered(t_holder *holder)
 {
 	t_stack	*second;
 	t_stack	*third;
-	t_stack	*smallest;
+	int		smallest;
 
-	second = first->next;
+	second = holder->a->next;
 	third = second->next;
-	if ((first->rank < second->rank && first->rank < first->rank) && second->rank > third->rank)
-		return (1);
-	if (first->rank > second->rank && first->rank < third->rank)
-		return (1);
-	if (first->rank > second->rank && first->rank > third->rank)
-		return (1);
-	//dans ces trois scenarios il faut swap puis smallest at top
+	if (third->rank > holder->a->rank && second->rank > third->rank)
+		swap(&holder->a, holder, 0);
+	else if (holder->a->rank > second->rank && holder->a->rank < third->rank)
+		swap(&holder->a, holder, 0);
+	else if (holder->a->rank > second->rank && second->rank > third->rank)
+		swap(&holder->a, holder, 0);
+	smallest = smallest_elem(holder->a);
+	fastest_path(&holder->a, ft_equals, holder, smallest);
 }

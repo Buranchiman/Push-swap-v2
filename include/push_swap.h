@@ -15,7 +15,6 @@ typedef struct s_holder
 {
 	t_stack	*a;
 	t_stack	*b;
-	int		window_max;
 }				t_holder;
 
 t_stack		*ft_new_stack(int content);
@@ -35,8 +34,16 @@ void		reverse_rotate(t_stack	**stack, t_holder *holder, int option);
 void		swap(t_stack	**stack, t_holder *holder, int option);
 
 void		rank_list(t_stack	**stack);
-void		sortstack(t_holder *holder);
 
-void		fastest_path(t_stack **stack, int f(int elem, int cmp), t_holder *holder);
+int			ft_equals(int testing_value, int reference);
+int			ft_smaller(int i, int max);
+void		sortstack(t_holder *holder);
+void		refill_a(t_holder *holder);
+
+int			fastest_path(t_stack **stack, int f(int elem, int cmp), t_holder *holder, int cmp);
+
+int			smallest_elem(t_stack *stack);
+int			biggest_elem(t_stack	*stack);
+void		three_ordered(t_holder *holder);
 
 #endif
