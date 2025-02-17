@@ -1,9 +1,9 @@
 #include "push_swap.h"
 
-int	smallest_elem(t_stack *stack)
+size_t	smallest_elem(t_stack *stack)
 {
 	t_stack	*tmp;
-	int		smallest;
+	size_t	smallest;
 
 	tmp = stack;
 	smallest = tmp->rank;
@@ -16,10 +16,10 @@ int	smallest_elem(t_stack *stack)
 	return (smallest);
 }
 
-int	biggest_elem(t_stack	*stack)
+size_t	biggest_elem(t_stack	*stack)
 {
-	t_stack	*tmp;
-	int		biggest;
+	t_stack		*tmp;
+	size_t		biggest;
 
 	tmp = stack;
 	biggest = tmp->rank;

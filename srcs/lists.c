@@ -9,6 +9,7 @@ t_stack	*ft_new_stack(int content)
 		return (NULL);
 	stack->content = content;
 	stack->rank = 0;
+	stack->is_initialized = false;
 	stack->next = NULL;
 	return (stack);
 }
@@ -65,4 +66,14 @@ int	ft_stacksize(t_stack *stack)
 		i++;
 	}
 	return (i);
+}
+
+t_stack	*ft_stacklast(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	tmp = stack;
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
 }

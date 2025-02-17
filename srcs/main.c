@@ -33,13 +33,7 @@ int	main(int arc, char **arv)
 		i++;
 	}
 	rank_list(&(holder).a);
-	// print_list(holder.a);
-	// push(&(holder).a, &(holder).b, "pb\n");
-	// print_list(holder.a);
-	// //ft_printf(1, "content of b is :\n");
-	// print_list(holder.b);
-	// rotate(&(holder).a, "ra\n");
-	// print_list(holder.a);
+	//print_list(holder.a);
 	sortstack(&holder);
 	//print_list(holder.b);
 	three_ordered(&holder);
