@@ -46,7 +46,7 @@ int	search_bottom(t_stack *stack, int f(size_t elem, size_t cmp), int cmp)
 	return (count);
 }
 
-int	fastest_path(t_stack **stack, int f(size_t elem, size_t cmp), t_holder *holder, int cmp)
+void	fastest_path(t_stack **stack, int f(size_t elem, size_t cmp), t_holder *holder, int cmp)
 {
 	int	rotate_count;
 	int	reverse_rotate_count;
@@ -55,8 +55,6 @@ int	fastest_path(t_stack **stack, int f(size_t elem, size_t cmp), t_holder *hold
 	rotate_count = search_top(*stack, f, cmp);
 	reverse_rotate_count = search_bottom(*stack, f, cmp);
 	count = 0;
-	if (rotate_count == -1)
-		return (rotate_count);
 	if (rotate_count <= reverse_rotate_count)
 	{
 		while (count < rotate_count)
@@ -73,5 +71,4 @@ int	fastest_path(t_stack **stack, int f(size_t elem, size_t cmp), t_holder *hold
 			count ++;
 		}
 	}
-	return (count);
 }

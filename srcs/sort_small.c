@@ -1,37 +1,12 @@
 #include "push_swap.h"
 
-size_t	smallest_elem(t_stack *stack)
+void	sort_two(t_holder  *holder)
 {
-	t_stack	*tmp;
-	size_t	smallest;
-
-	tmp = stack;
-	smallest = tmp->rank;
-	while (tmp)
-	{
-		if (tmp->rank < smallest)
-			smallest = tmp->rank;
-		tmp = tmp->next;
-	}
-	return (smallest);
+	if (!ft_sorted(holder->a))
+		swap(&(holder)->a, holder, 0);
 }
 
-size_t	biggest_elem(t_stack	*stack)
-{
-	t_stack		*tmp;
-	size_t		biggest;
-
-	tmp = stack;
-	biggest = tmp->rank;
-	while (tmp)
-	{
-		if (tmp->rank > biggest)
-			biggest = tmp->rank;
-		tmp = tmp->next;
-	}
-	return (biggest);
-}
-void	three_ordered(t_holder *holder)
+void	sort_three(t_holder *holder)
 {
 	t_stack	*second;
 	t_stack	*third;
@@ -47,4 +22,15 @@ void	three_ordered(t_holder *holder)
 		swap(&holder->a, holder, 0);
 	smallest = smallest_elem(holder->a);
 	fastest_path(&holder->a, ft_equals, holder, smallest);
+}
+void	sort_small(t_holder *holder)
+{
+	if (ft_stacksize(holder->a) == 3)
+		sort_three(holder);
+	else if (ft_stacksize(holder->a) == 2)
+	{
+		sort_two(holder);
+		ft_stackclear(&(holder)->a);
+		exit (EXIT_SUCCESS);
+	}
 }

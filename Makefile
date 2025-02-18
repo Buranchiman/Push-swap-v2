@@ -9,11 +9,13 @@ PATH_SRCS	=	srcs/
 
 SRCS	+=	lists.c
 SRCS	+=	check_input.c
-SRCS	+=	push.c
+SRCS	+=	instructions.c
 SRCS	+=	rank.c
 SRCS	+=	sort.c
+SRCS	+=	search_in_stack.c
 SRCS	+=	pathfinder.c
-SRCS	+=	order.c
+SRCS	+=	sort_small.c
+SRCS	+=	window_sort.c
 
 vpath	%.c	$(PATH_SRCS)
 
@@ -45,7 +47,7 @@ CFLAGS	=	-Wall	-Wextra	-Werror
 all:		$(NAME)
 
 
-$(NAME): $(LIBFT)	$(OBJS)	$(MAIN) 
+$(NAME): $(LIBFT)	$(OBJS)	$(MAIN)
 	$(CC)	$(CFLAGS) $(OBJS)	objs/main.o 	-o	$(NAME)	$(INCLUDE)	$(LIBFT)
 
 $(LIBFT):
