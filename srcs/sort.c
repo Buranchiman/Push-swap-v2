@@ -35,6 +35,6 @@ void	refill_a(t_holder *holder)
 		biggest = biggest_elem(holder->b);
 		fastest_path(&holder->b, ft_equals, holder, biggest);
 		fastest_path(&holder->a, ft_equals, holder, biggest + 1);
-		push(&holder->b, &holder->a, holder);
+		push(&holder->b, &holder->a, holder, 0);
 	}
 }

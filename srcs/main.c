@@ -10,11 +10,7 @@ int	main(int arc, char **arv)
 	i = 1;
 	holder.a = NULL;
 	holder.b = NULL;
-	if (!check_params(arv))
-	{
-		ft_printf(2, "Error\n");
-		return (1);
-	}
+	check_params(arv);
 	while (arv[i])
 	{
 		ft_stackadd_back(&(holder).a, ft_new_stack(ft_atoi(arv[i])));

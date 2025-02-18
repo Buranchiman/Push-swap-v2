@@ -34,7 +34,7 @@ int			check_only_digits(char *str);
 int			check_dups(char **arv, int index);
 int			check_params(char **arv);
 
-void		push(t_stack **from, t_stack **to, t_holder *holder);
+void		push(t_stack **from, t_stack **to, t_holder *holder, int option);
 void		rotate(t_stack	**stack, t_holder *holder, int option);
 void		reverse_rotate(t_stack	**stack, t_holder *holder, int option);
 void		swap(t_stack	**stack, t_holder *holder, int option);

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	push(t_stack **from, t_stack **to, t_holder *holder)
+void	push(t_stack **from, t_stack **to, t_holder *holder, int option)
 {
 	t_stack	*tmp;
 
@@ -8,10 +8,13 @@ void	push(t_stack **from, t_stack **to, t_holder *holder)
 	*from = (*from)->next;
 	tmp->next = NULL;
 	ft_stackadd_front(to, tmp);
-	if (to == &(holder)->a)
-		ft_printf(1, "%s", "pa\n");
-	else
-		ft_printf(1, "%s", "pb\n");
+	if (option == 0)
+	{
+		if (to == &(holder)->a)
+			ft_printf(1, "%s", "pa\n");
+		else
+			ft_printf(1, "%s", "pb\n");
+	}
 }
 
 void	rotate(t_stack	**stack, t_holder *holder, int option)

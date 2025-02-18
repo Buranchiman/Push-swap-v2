@@ -68,13 +68,12 @@ int	check_params(char **arv)
 	i = 1;
 	while (arv[i])
 	{
-		if (!check_only_digits(arv[i]))
-			return (0);
 		holder = ft_atoll(arv[i]);
-		if (holder < INT_MIN || holder > INT_MAX)
-			return (0);
-		if (!check_dups(arv, i))
-			return (0);
+		if (!check_only_digits(arv[i]) || (holder < INT_MIN || holder > INT_MAX) || !check_dups(arv, i))
+		{
+			ft_printf(2, "Error\n");
+			exit (EXIT_FAILURE);
+		}
 		i++;
 	}
 	return (1);

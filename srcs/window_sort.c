@@ -16,7 +16,7 @@ void	in_window_or_smaller(t_holder  *holder)
 {
 	if (holder->a->rank >= holder->window_min && holder->a->rank <= holder->window_max)
 		{
-			push(&(holder)->a, &(holder)->b, holder);
+			push(&(holder)->a, &(holder)->b, holder, 0);
 			holder->window_min ++;
 			holder->window_max ++;
 			if (holder->a->rank > holder->window_max)
@@ -29,7 +29,7 @@ void	in_window_or_smaller(t_holder  *holder)
 		}
 	if (holder->a->rank < holder->window_min)
 	{
-		push(&(holder)->a, &(holder)->b, holder);
+		push(&(holder)->a, &(holder)->b, holder, 0);
 		holder->window_min ++;
 		holder->window_max ++;
 	}
