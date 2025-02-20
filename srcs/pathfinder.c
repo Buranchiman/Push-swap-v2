@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pathfinder.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/20 10:34:12 by wivallee          #+#    #+#             */
+/*   Updated: 2025/02/20 10:36:36 by wivallee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	search_top(t_stack *stack, int f(size_t elem, size_t cmp), int cmp)
@@ -46,7 +58,8 @@ int	search_bottom(t_stack *stack, int f(size_t elem, size_t cmp), int cmp)
 	return (count);
 }
 
-void	fastest_path(t_stack **stack, int f(size_t elem, size_t cmp), t_holder *holder, int cmp)
+void	fastest_path(t_stack **stack, int f(size_t elem, size_t cmp),
+	t_holder *holder, int cmp)
 {
 	int	rotate_count;
 	int	reverse_rotate_count;

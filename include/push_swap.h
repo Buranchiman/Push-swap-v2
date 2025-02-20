@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/20 10:39:21 by wivallee          #+#    #+#             */
+/*   Updated: 2025/02/20 10:40:28 by wivallee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -42,14 +54,15 @@ void		swap(t_stack	**stack, t_holder *holder, int option);
 void		rank_list(t_stack	**stack);
 
 void		init_window(t_holder *holder);
-void		in_window_or_smaller(t_holder  *holder);
+void		in_window_or_smaller(t_holder *holder);
 void		window_sort(t_holder *holder);
 
 int			ft_sorted(t_stack *stack);
 int			ft_equals(size_t testing_value, size_t reference);
 void		refill_a(t_holder *holder);
 
-void		fastest_path(t_stack **stack, int f(size_t elem, size_t cmp), t_holder *holder, int cmp);
+void		fastest_path(t_stack **stack, int f(size_t elem, size_t cmp),
+				t_holder *holder, int cmp);
 
 t_stack		*ft_stacklast(t_stack *stack);
 size_t		smallest_elem(t_stack *stack);

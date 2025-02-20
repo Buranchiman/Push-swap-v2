@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/20 10:34:47 by wivallee          #+#    #+#             */
+/*   Updated: 2025/02/20 10:34:58 by wivallee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	sort_two(t_holder  *holder)
+void	sort_two(t_holder *holder)
 {
 	if (!ft_sorted(holder->a))
 		swap(&(holder)->a, holder, 0);
@@ -23,6 +35,7 @@ void	sort_three(t_holder *holder)
 	smallest = smallest_elem(holder->a);
 	fastest_path(&holder->a, ft_equals, holder, smallest);
 }
+
 void	sort_small(t_holder *holder)
 {
 	if (ft_stacksize(holder->a) == 3)

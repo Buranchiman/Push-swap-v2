@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_input.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/20 10:33:26 by wivallee          #+#    #+#             */
+/*   Updated: 2025/02/20 10:35:45 by wivallee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 long long	ft_atoll(char *nptr)
@@ -69,7 +81,8 @@ int	check_params(char **arv)
 	while (arv[i])
 	{
 		holder = ft_atoll(arv[i]);
-		if (!check_only_digits(arv[i]) || (holder < INT_MIN || holder > INT_MAX) || !check_dups(arv, i))
+		if (!check_only_digits(arv[i]) || (holder < INT_MIN
+				|| holder > INT_MAX) || !check_dups(arv, i))
 		{
 			ft_printf(2, "Error\n");
 			exit (EXIT_FAILURE);

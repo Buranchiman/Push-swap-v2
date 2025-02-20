@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/20 10:38:28 by wivallee          #+#    #+#             */
+/*   Updated: 2025/02/20 10:39:02 by wivallee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int	read_pushswap(char *instruction, t_holder  *holder)
+int	read_pushswap(char *instruction, t_holder *holder)
 {
 	if (!ft_strncmp(instruction, "sa\n", 4))
 		swap(&(holder)->a, holder, 1);
@@ -12,15 +24,15 @@ int	read_pushswap(char *instruction, t_holder  *holder)
 		swap(&(holder)->b, holder, 1);
 	}
 	else if (!ft_strncmp(instruction, "pa\n", 4))
-		push(&(holder)->b,  &(holder)->a, holder, 1);
+		push(&(holder)->b, &(holder)->a, holder, 1);
 	else if (!ft_strncmp(instruction, "pb\n", 4))
-		push(&(holder)->a,  &(holder)->b, holder, 1);
+		push(&(holder)->a, &(holder)->b, holder, 1);
 	else
 		return (-1);
 	return (0);
 }
 
-int	read_rotate(char *instruction, t_holder  *holder)
+int	read_rotate(char *instruction, t_holder *holder)
 {
 	if (!ft_strncmp(instruction, "ra\n", 4))
 		rotate(&(holder)->a, holder, 1);
@@ -49,7 +61,7 @@ void	read_instructions(t_holder *holder)
 {
 	char	*tmp;
 
-	tmp  = get_next_line(1);
+	tmp = get_next_line(1);
 	while (tmp)
 	{
 		if (read_pushswap(tmp, holder) == -1 && read_rotate(tmp, holder) == -1)
@@ -61,7 +73,7 @@ void	read_instructions(t_holder *holder)
 			exit (EXIT_FAILURE);
 		}
 		free(tmp);
-		tmp  = get_next_line(1);
+		tmp = get_next_line(1);
 	}
 }
 

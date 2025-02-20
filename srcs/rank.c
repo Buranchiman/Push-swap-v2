@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rank.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/20 10:34:20 by wivallee          #+#    #+#             */
+/*   Updated: 2025/02/20 10:36:55 by wivallee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	rank_list(t_stack	**stack)
@@ -16,7 +28,7 @@ void	rank_list(t_stack	**stack)
 		cmp = INT_MAX;
 		while (tmp != NULL)
 		{
-			if (tmp->content <= cmp && tmp->is_initialized ==  false)
+			if (tmp->content <= cmp && tmp->is_initialized == false)
 			{
 				change = tmp;
 				cmp = tmp->content;
