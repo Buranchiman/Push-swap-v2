@@ -6,7 +6,7 @@
 /*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 10:34:05 by wivallee          #+#    #+#             */
-/*   Updated: 2025/02/20 16:29:41 by wivallee         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:25:10 by wivallee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,11 @@
 int	main(int arc, char **arv)
 {
 	t_holder	holder;
-	// int			i;
 
 	if (arc == 1)
 		return (1);
-	// i = 1;
 	holder.a = NULL;
 	holder.b = NULL;
-	//check_params(arv);
-	// while (arv[i])
-	// {
-	// 	ft_stackadd_back(&(holder).a, ft_new_stack(ft_atoi(arv[i])));
-	// 	i++;
-	// }
 	get_numbers(arv, arc, &holder);
 	rank_list(&(holder).a);
 	window_sort(&holder);
@@ -36,3 +28,7 @@ int	main(int arc, char **arv)
 	ft_stackclear(&(holder).a);
 	return (0);
 }
+
+GERER LES DUPS UNE FOIS EN CHIFFRE ET PAS AVANT
++ FAIRE UN SCRIPT POUR TESTER LE MAX DE COMBINAISONS
+VOIR POUR FAIRE UN MAKEFILE + CLEAN (POUR LE MAIN ET LE MAIN BONUS LE CHANGEMENTS DOIVENT ETRES PRIS EN COMPTE)

@@ -6,7 +6,7 @@
 /*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 10:39:21 by wivallee          #+#    #+#             */
-/*   Updated: 2025/02/20 16:29:18 by wivallee         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:19:17 by wivallee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_holder
 	size_t	window_max;
 }				t_holder;
 
+# define TINY_LIST_RATIO 0.5f
 # define SMALL_LIST_RATIO 0.1f
 # define BIG_LIST_RATIO 0.06f
 

@@ -6,7 +6,7 @@
 /*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 10:35:13 by wivallee          #+#    #+#             */
-/*   Updated: 2025/02/20 10:38:04 by wivallee         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:20:42 by wivallee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	init_window(t_holder *holder)
 
 	holder->window_min = 0;
 	size = ft_stacksize(holder->a);
-	if (size <= 200)
+	if (size <= 10)
+		holder->window_max = size * TINY_LIST_RATIO;
+	else if (size <= 200)
 		holder->window_max = size * SMALL_LIST_RATIO;
 	else
 		holder->window_max = size * BIG_LIST_RATIO;

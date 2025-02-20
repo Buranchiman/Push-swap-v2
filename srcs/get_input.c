@@ -6,7 +6,7 @@
 /*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 14:24:45 by wivallee          #+#    #+#             */
-/*   Updated: 2025/02/20 16:33:18 by wivallee         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:41:34 by wivallee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ char	*get_list(char **arv, int arc)
 			ft_printf(2, "Error\n");
 			exit (EXIT_FAILURE);
 		}
-
 		i++;
 	}
 	return (complete_list);

@@ -6,7 +6,7 @@
 /*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 10:33:26 by wivallee          #+#    #+#             */
-/*   Updated: 2025/02/20 16:33:18 by wivallee         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:40:32 by wivallee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,6 @@ long long	ft_atoll(char *nptr)
 	return (total * sign);
 }
 
-// int	check_only_digits(char *str)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	if (str[0] == '-')
-// 		i++;
-// 	while (str[i])
-// 	{
-// 		if (!ft_isdigit(str[i]))
-// 			return (0);
-// 		i++;
-// 	}
-// 	return (1);
-// }
-
 int	check_dups(char **arv, int index)
 {
 	int		len;
@@ -71,23 +55,3 @@ int	check_dups(char **arv, int index)
 	}
 	return (1);
 }
-
-// int	check_params(char **arv)
-// {
-// 	int			i;
-// 	long long	holder;
-
-// 	i = 1;
-// 	while (arv[i])
-// 	{
-// 		holder = ft_atoll(arv[i]);
-// 		if (!check_only_digits(arv[i]) || (holder < INT_MIN
-// 				|| holder > INT_MAX) || !check_dups(arv, i))
-// 		{
-// 			ft_printf(2, "Error\n");
-// 			exit (EXIT_FAILURE);
-// 		}
-// 		i++;
-// 	}
-// 	return (1);
-// }
