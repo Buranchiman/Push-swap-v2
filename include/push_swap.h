@@ -6,7 +6,7 @@
 /*   By: wivallee <wivallee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 10:39:21 by wivallee          #+#    #+#             */
-/*   Updated: 2025/02/20 10:40:28 by wivallee         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:29:18 by wivallee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ long long	ft_atoll(char *nptr);
 int			check_only_digits(char *str);
 int			check_dups(char **arv, int index);
 int			check_params(char **arv);
+
+char		*get_list(char **arv, int arc);
+void		get_numbers(char **arv, int arc, t_holder *holder);
 
 void		push(t_stack **from, t_stack **to, t_holder *holder, int option);
 void		rotate(t_stack	**stack, t_holder *holder, int option);

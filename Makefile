@@ -9,6 +9,7 @@ PATH_SRCS	=	srcs/
 
 SRCS	+=	lists.c
 SRCS	+=	check_input.c
+SRCS	+=	get_input.c
 SRCS	+=	instructions.c
 SRCS	+=	rank.c
 SRCS	+=	sort.c
